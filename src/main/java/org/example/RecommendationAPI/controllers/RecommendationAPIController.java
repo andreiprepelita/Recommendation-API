@@ -62,7 +62,7 @@ public class RecommendationAPIController {
         if (sparqlResponse.isError) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "The query for the request is not valid." + sparqlResponse.message);
         }
-        return sparqlResponse.retrieveRecords(pageNumber, numberOfItemsPerPage, "userPreferences");
+        return sparqlResponse.retrieveRecords(pageNumber, numberOfItemsPerPage, "userPreferences", true);
     }
 
     @PostMapping("/playlist/local")
